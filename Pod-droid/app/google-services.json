@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "563655727271",
+    "firebase_url": "https://pod-droid.firebaseio.com",
+    "project_id": "pod-droid",
+    "storage_bucket": "pod-droid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563655727271:android:f2a3a332c056627a",
+        "android_client_info": {
+          "package_name": "trainedge.pod_droid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563655727271-88jdngauvalc24n3arvqlilu1vus7i7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trainedge.pod_droid",
+            "certificate_hash": "e9cfbe3b6cbd81bab478e6cf692d40c5cac62825"
+          }
+        },
+        {
+          "client_id": "563655727271-jf4i2gl25aj8lhjb18ai266qsh499o6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf01dAO1EH1HP__2ooU3_pQrrD1FrD-6w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563655727271-jf4i2gl25aj8lhjb18ai266qsh499o6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

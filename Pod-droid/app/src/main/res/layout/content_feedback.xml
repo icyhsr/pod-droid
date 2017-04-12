@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="trainedge.pod_droid.Feedback"
+    tools:showIn="@layout/activity_feedback">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="223dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="27dp"
+        android:text="  POD-DROID"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText6"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email Id"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Phone no."
+        android:textColor="@color/cardview_light_background"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Your Message"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/editText6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
