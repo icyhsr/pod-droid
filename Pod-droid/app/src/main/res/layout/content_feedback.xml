@@ -38,6 +38,7 @@
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
         android:layout_marginTop="33dp"
@@ -47,49 +48,49 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="27sp"
         android:textStyle="bold"
-        android:layout_alignParentEnd="true" />
+        tools:text="Name-" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText6"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email Id"
+        android:text="Email Id-"
         android:textColor="@color/cardview_light_background"
         android:textSize="27sp"
-        android:textStyle="bold"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="phone"
-        android:text="Phone no."
+        android:text="Phone no.-"
         android:textColor="@color/cardview_light_background"
         android:textSize="27sp"
-        android:textStyle="bold"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText6"
+        android:layout_marginTop="11dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Your Message"
+        android:text="Your Message-"
         android:textColor="@color/cardview_light_background"
         android:textSize="27sp"
-        android:textStyle="bold"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/editText6"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="bold" />
 
 </RelativeLayout>
