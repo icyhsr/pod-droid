@@ -2,8 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_Refresh"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Refresh"
         app:showAsAction="never" />
+
+
+
+<item
+    android:id="@+id/action_Settings"
+    android:orderInCategory="100"
+    android:title="Settings"
+    app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Feedback"
+        android:orderInCategory="100"
+        android:title="Feedback"
+        app:showAsAction="never" />
+
+
 </menu>

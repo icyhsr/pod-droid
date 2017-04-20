@@ -7,12 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Feedback extends AppCompatActivity {
+public class SplashScr extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_splash_scr);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -24,9 +24,6 @@ public class Feedback extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-//        Drawable progress = ratingBar.getProgressDrawable();
-//        DrawableCompat.setTint(progress, Color.WHITE);
     }
 
 }

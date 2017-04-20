@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="trainedge.pod_droid.Home"
-    tools:showIn="@layout/activity_home2">
+    tools:context="trainedge.pod_droid.SplashScr"
+    tools:showIn="@layout/activity_splash_scr">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="369dp"
-        android:layout_height="564dp"
-        app:srcCompat="@drawable/ssimg"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="-11dp" />
 </android.support.constraint.ConstraintLayout>
