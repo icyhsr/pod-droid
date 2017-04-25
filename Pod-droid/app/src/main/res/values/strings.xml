@@ -14,4 +14,46 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_splash_scr">SplashScr</string>
 
+    <string name="detail_bt_play">Play</string>
+    <string name="detail_bt_pause">Pause</string>
+    <string name="detail_bt_stop">Stop</string>
+    <string name="row_duration">Duration: </string>
+
+    <string name="home_exit_dialog_message">Deseas salir?</string>
+    <string name="home_exit_ok">Si</string>
+    <string name="home_exit_cancel">No</string>
+
+
+    <string-array name="common_name">
+        <item>Kinda Famous</item>
+        <item>The Onion</item>
+        <item>Build The Church</item>
+        <item>Ted Radio Hour</item>
+        <item>Lets Talk About Tech</item>
+        <item>Spark</item>
+        <item>Wired</item>
+        <item>Newspod</item>
+        <item>English Bulletins</item>
+        <item>Hindi Bulletins</item>
+        <item>AIB</item>
+    </string-array>
+    <string-array name="podcast">
+        <item>https://kindafamouspod.podbean.com/feed/</item>
+        <item>http://www.theonion.com/feeds/rss?feature_type=radio-news</item>
+        <item>http://feeds.feedburner.com/BuildTheChurch</item>
+        <item>https://www.npr.org/rss/podcast.php</item>
+        <item>www.bbc.co.uk/programmes/p02nrxgq/episodes/downloads.rss</item>
+        <item>www.cba.ca/podcasting/include/spark.xml</item>
+        <item>www.wired.co.uk/rss/podcast/</item>
+        <item>www.bbc.co.uk/podcasts/radio/newspod/rss.xml</item>
+        <item>www.newsonair.nic.in/Eng.asp</item>
+        <item>www.newsonair.nic.in/Hindi.asp</item>
+        <item>feeds.feedburner.com/Allindiabakchod</item>
+    </string-array>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_basic">basic</string>
+    <string name="title_activity_podcast_viewer">Podcast Viewer</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="title_activity_logout">LogoutActivity</string>
 </resources>

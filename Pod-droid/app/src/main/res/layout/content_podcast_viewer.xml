@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="trainedge.pod_droid.SplashScr"
-    tools:showIn="@layout/activity_splash_scr">
+    tools:context="trainedge.pod_droid.PodcastViewerActivity"
+    tools:showIn="@layout/activity_podcast_viewer">
 
 </android.support.constraint.ConstraintLayout>

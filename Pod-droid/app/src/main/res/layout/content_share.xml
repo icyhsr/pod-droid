@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="trainedge.pod_droid.LoginActivity"
-    tools:showIn="@layout/activity_login3">
+    tools:context="trainedge.pod_droid.ShareActivity"
+    tools:showIn="@layout/activity_share">
 
 </android.support.constraint.ConstraintLayout>

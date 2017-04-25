@@ -1,61 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/colorAccent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="trainedge.pod_droid.Feedback"
+    tools:context="trainedge.pod_droid.FeedbackActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/activity_feedback">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Submit"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="447dp" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Email Id-"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="27sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp" />
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText5"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Write Your Feedback"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="27sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/line"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView4"
+            android:background="@android:color/darker_gray"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dip" />
+
+        <ImageButton
+            android:id="@+id/rate1"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/image_btn_transparent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/mad" />
+
+        <ImageButton
+            android:id="@+id/rate2"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView5"
+            android:layout_marginEnd="28dp"
+            android:layout_toStartOf="@+id/rate3"
+            android:background="@drawable/image_btn_transparent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/sad" />
+
+        <ImageButton
+            android:id="@+id/rate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/rate2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/image_btn_transparent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/confused" />
+
+        <ImageButton
+            android:id="@+id/rate4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView5"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/submit"
+            android:background="@drawable/image_btn_transparent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/happy" />
+
+        <ImageButton
+            android:id="@+id/rate5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/rate4"
+            android:background="@drawable/image_btn_transparent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/loved" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rate1"
+            android:layout_marginTop="33dp"
+            android:text="Your Feedback"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line1"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView5"
+            android:background="@android:color/darker_gray"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dip"
+            android:textColor="@color/cardview_light_background" />
+
+        <EditText
+            android:id="@+id/user_mess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/edit_text"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Your Thoughts."
+            android:inputType="textMultiLine"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/user_mess"
+            android:layout_marginTop="33dp"
+            android:text="Email Address"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line2"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView8"
+            android:background="@android:color/darker_gray"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dip"
+            android:textColor="@color/cardview_light_background" />
+
+        <EditText
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/user_mess"
+            android:layout_below="@+id/line2"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/email_drawable"
+            android:ems="10"
+            android:hint="xyz@abc.com"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="14sp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="57dp"
+            android:clickable="true"
+            android:contextClickable="false"
+            app:elevation="8dp"
+            app:fabSize="normal"
+            app:rippleColor="@color/cardview_light_background"
+            app:srcCompat="@color/cardview_light_background" />
+
+    </RelativeLayout>
 
     <RatingBar
         android:id="@+id/ratingBar"
-        style="@style/Widget.AppCompat.RatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="126dp"
-        android:rating="5" />
+        android:clickable="true"
+        android:numStars="5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="307dp" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

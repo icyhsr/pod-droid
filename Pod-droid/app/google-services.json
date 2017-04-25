@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "563655727271-ajpu9a20o5em1adt0qminu20qmndcu6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trainedge.pod_droid",
+            "certificate_hash": "54f721232f511e921fc4eda93444736aa81240b6"
+          }
+        },
+        {
           "client_id": "563655727271-88jdngauvalc24n3arvqlilu1vus7i7d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

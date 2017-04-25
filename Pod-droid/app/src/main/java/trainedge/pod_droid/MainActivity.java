@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent mainIntent = new Intent(MainActivity.this, SoundActivity.class);
-        startActivity(mainIntent);
     }
 
 }

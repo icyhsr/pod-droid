@@ -20,8 +20,8 @@ public class RssFeedRequest extends SpringAndroidSpiceRequest<byte[]> {
     @Override
     public byte[] loadDataFromNetwork() throws Exception {
         RestTemplate restTemplate=getRestTemplate();
-
-        return restTemplate.getForObject(url, byte[].class);
+        byte[] bytes = restTemplate.getForObject(url, byte[].class);
+        return bytes;
     }
 
 

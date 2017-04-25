@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/nav_head"
+        android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Categories" />
-        <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_Discover"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Discover" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_Downloads"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Downloads" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_History"
             android:icon="@drawable/ic_menu_manage"
             android:title="History" />
+        <item
+            android:id="@+id/nav_Setting"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+
+
     </group>
 
     <item android:title="Communicate">

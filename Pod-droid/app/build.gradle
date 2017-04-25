@@ -26,25 +26,27 @@ android {
 }
 
 dependencies {
+
+
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile('com.octo.android.robospice:robospice-spring-android:1.4.14')
+            {
+                exclude group: 'org.apache.commons', module: 'commons-io'
+            }
+    compile('org.simpleframework:simple-xml:2.7.1') {
+        exclude module: 'xpp3'
+        exclude group: 'stax'
+    }
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     compile 'com.android.support:design:25.3.0'
     compile 'com.google.firebase:firebase-auth:10.0.1'
     compile 'com.google.android.gms:play-services-auth:10.0.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-
-    apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
     compile 'com.google.code.gson:gson:2.2.4'
-    compile ('com.octo.android.robospice:robospice-spring-android:1.4.14'){
-        exclude group: 'org.apache.commons', module: 'commons-io'
-    }
-    compile('org.simpleframework:simple-xml:2.7.1') {
-        exclude module: 'xpp3'
-        exclude group: 'stax'
-    }
 }
 
 

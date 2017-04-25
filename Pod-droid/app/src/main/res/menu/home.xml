@@ -8,17 +8,22 @@
         app:showAsAction="never" />
 
 
-
-<item
-    android:id="@+id/action_Settings"
-    android:orderInCategory="100"
-    android:title="Settings"
-    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_About"
+        android:orderInCategory="100"
+        android:title="About"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_Feedback"
         android:orderInCategory="100"
         android:title="Feedback"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Logout"
+        android:orderInCategory="100"
+        android:title="Logout"
         app:showAsAction="never" />
 
 
