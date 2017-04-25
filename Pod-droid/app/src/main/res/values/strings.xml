@@ -56,4 +56,5 @@
     <string name="title_activity_podcast_viewer">Podcast Viewer</string>
     <string name="title_activity_share">ShareActivity</string>
     <string name="title_activity_logout">LogoutActivity</string>
+    <string name="title_activity_send">SendActivity</string>
 </resources>
