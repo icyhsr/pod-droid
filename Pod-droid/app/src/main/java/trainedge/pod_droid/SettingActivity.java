@@ -52,7 +52,7 @@ public class SettingActivity extends AppCompatActivity implements CompoundButton
                 if(user == null) {
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                     // if (mAuth.getCurrentUser()==null){
-                    Intent logint = new Intent(SettingActivity.this,LoginActivity.class);
+                    Intent logint = new Intent(SettingActivity.this, LoginActivity.class);
                     startActivity(logint);
                     finish();
 
@@ -84,31 +84,18 @@ public class SettingActivity extends AppCompatActivity implements CompoundButton
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.about) {
-            Intent aboutintent = new Intent(SettingActivity.this, AboutActivity.class);
-            startActivity(aboutintent);
+        if (v.getId() == R.id.acc_detail) {
+            Intent accintent = new Intent(SettingActivity.this, AccountActivity.class);
+            startActivity(accintent);
+        }
+        if (v.getId() == R.id.priv_pol) {
+            Intent privintent = new Intent(SettingActivity.this, PrivacyActivity.class);
+            startActivity(privintent);
         }
 
-        if (v.getId() == R.id.share) {
-            try {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "ZapDiet");
-                String sAux = "\nYour friend invited you to join our app.\n\n";
-                sAux = sAux + "https://play.google.com/store/apps/details?id=ZapDiet \n\nPlease give a try to our app.\n\n\n Thank You.";
-                i.putExtra(Intent.EXTRA_TEXT, sAux);
-                startActivity(Intent.createChooser(i, "Share using..."));
-            } catch(Exception e) {
-                //e.toString();
-            }
-
-        }
-        if (v.getId() == R.id.logout) {
-            mAuth.signOut();
-            LoginManager.getInstance().logOut();
-            AccessToken.setCurrentAccessToken(null);
-        }
     }
+
+
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

@@ -69,11 +69,10 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.nav_Setting) {
 
-            Intent gotoSetting = new Intent(HomeActivity.this, SettingActivity.class);
-            startActivity(gotoSetting);
-            return true;
+            Intent setting=new Intent(this,SettingActivity.class);
+            startActivity(setting);
         }
         if (id ==R.id.action_Feedback){
             Intent gotoFeedback = new Intent(HomeActivity.this, FeedbackActivity.class);

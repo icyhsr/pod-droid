@@ -16,6 +16,7 @@ import java.util.List;
 
 import trainedge.pod_droid.Model.CategoryModel;
 import trainedge.pod_droid.PodcastViewerActivity;
+import trainedge.pod_droid.PodcastViewerActivity_;
 import trainedge.pod_droid.R;
 
 
@@ -50,7 +51,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.tvCatName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(holder.tvCatName.getContext(), PodcastViewerActivity.class);
+                Intent i = new Intent(holder.tvCatName.getContext(), PodcastViewerActivity_.class);
                 i.putExtra(CAT_NAME, model.name);
                 i.putExtra(CAT_POS, position);
                 holder.tvCatName.getContext().startActivity(i);

@@ -23,17 +23,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    packagingOptions {
+//        exclude 'META-INF/DEPENDENCIES'
+//        exclude 'META-INF/NOTICE'
+//        exclude 'META-INF/LICENSE'
+//        exclude 'META-INF/LICENSE.txt'
+//        exclude 'META-INF/license.txt'
+//        exclude 'META-INF/NOTICE.txt'
+//        exclude 'META-INF/notice.txt'
+// }
 }
 
 dependencies {
 
-
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
-    compile('com.octo.android.robospice:robospice-spring-android:1.4.14')
-            {
-                exclude group: 'org.apache.commons', module: 'commons-io'
-            }
+    compile('com.octo.android.robospice:robospice-spring-android:1.4.14') {
+        exclude group: 'org.apache.commons', module: 'commons-io'
+    }
     compile('org.simpleframework:simple-xml:2.7.1') {
         exclude module: 'xpp3'
         exclude group: 'stax'
@@ -50,7 +57,12 @@ dependencies {
 }
 
 
-
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+        resourcePackageName "trainedge.pod_droid" // the same as package in the manifest
+    }
+}
 
 
 

@@ -57,4 +57,12 @@
     <string name="title_activity_share">ShareActivity</string>
     <string name="title_activity_logout">LogoutActivity</string>
     <string name="title_activity_send">SendActivity</string>
+    <string name="title_activity_account">AccountActivity</string>
+    <string name="title_activity_privacy">PrivacyActivity</string>
+    <string name="home_button_load">Load</string>
+    <string name="home_url_hint">Podcast URL</string>
+    <string name="home_invalid_url">Podcast URL is invalid</string>
+    <string name="home_no_internet">No internet connection</string>
+    <string name="home_request_error">Request could not be completed due to Some reason</string>
+    <string name="detail_error_playing">This podcast language cannot be played</string>
 </resources>

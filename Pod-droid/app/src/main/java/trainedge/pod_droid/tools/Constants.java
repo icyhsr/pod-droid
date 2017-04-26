@@ -4,8 +4,6 @@ package trainedge.pod_droid.tools;
 public class Constants {
 
 
-    public static final String url="http://podcast.armadamusic.com/asot/podcast.xml";
-
     public static final String TAG_PREFIX_CONST="const_frag";
     public static final String TAG_FRAG_HOME= TAG_PREFIX_CONST+" fragment_home";
     public static final String TAG_FRAG_DETAIL = "fragment_details";
