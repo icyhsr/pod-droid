@@ -4,8 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="trainedge.pod_droid.PrivacyActivity"
     tools:showIn="@layout/activity_privacy">
 
+    <Button
+        android:id="@+id/Clearlh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Clear Listen History"
+        android:textColor="@color/cardview_light_background"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="28dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Clearsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Clear Search History"
+        android:textColor="@color/cardview_light_background"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/Clearlh"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

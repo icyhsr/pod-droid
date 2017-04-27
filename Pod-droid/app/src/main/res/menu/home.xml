@@ -25,6 +25,10 @@
         android:orderInCategory="100"
         android:title="Logout"
         app:showAsAction="never" />
-
+    <item
+        android:id="@+id/action_Settings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never" />
 
 </menu>

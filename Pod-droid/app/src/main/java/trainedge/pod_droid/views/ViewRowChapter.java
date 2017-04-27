@@ -58,9 +58,7 @@ public class ViewRowChapter extends RelativeLayout {
     void play() {
         if (listener != null)
             listener.onPlayListener();
-
     }
-
     public OnPlayButtonListener getListener() {
         return listener;
     }

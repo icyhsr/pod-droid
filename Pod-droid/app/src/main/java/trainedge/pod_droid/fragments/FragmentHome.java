@@ -5,6 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,18 +45,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
-/**
- * Created by angel on 6/7/15.
- */
-@EFragment(R.layout.fragment_home)
+@EFragment
 public class FragmentHome extends BaseFragment implements RequestListener<byte[]>, OnPlayButtonListener {
-
-
-    /**********************************************************************************************
-     *
-     *                                      Simple variables
-     *
-     **********************************************************************************************/
 
     ChaptersAdapter chaptersAdapter;
     Podcast parsedPodcast;
@@ -70,21 +64,7 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     String requestError;
 
 
-    /**********************************************************************************************
-     *
-     *                                      Special variables
-     *
-     **********************************************************************************************/
-
-
     MediaPlayer player;
-
-
-    /**********************************************************************************************
-     *
-     *                                          UI Variables
-     *
-     **********************************************************************************************/
 
     @ViewById
     ListView lvChapters;
@@ -100,11 +80,6 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     private String selected_url;
 
 
-    /**********************************************************************************************
-     *
-     *                                      Fragment's lifecycle
-     *
-     **********************************************************************************************/
     @Override
     public void onAttach(Context activity) {
         super.onAttach(activity);
@@ -112,6 +87,13 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         selected_url = pod_pref.getString("selected_url", "https://kindafamouspod.podbean.com/feed/");
     }
 
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
+    }
 
     @AfterViews
     void init() {
@@ -168,18 +150,6 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         killMediaPlayer();
 
     }
-    /**********************************************************************************************
-     *
-     *                                      Public methods
-     *
-     **********************************************************************************************/
-
-
-    /**********************************************************************************************
-     *
-     *                                      Private methods
-     *
-     **********************************************************************************************/
 
     private void initLogicalComponenets() {
         etUrl.setText(selected_url);
@@ -312,12 +282,6 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         }
         return isAudio;
     }
-
-    /**********************************************************************************************
-     *
-     *                                     Listeners
-     *
-     **********************************************************************************************/
 
     @Override
     public void onRequestFailure(SpiceException spiceException) {

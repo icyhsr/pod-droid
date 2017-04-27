@@ -69,10 +69,11 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.nav_Setting) {
+        if (id == R.id.action_Settings) {
 
-            Intent setting=new Intent(this,SettingActivity.class);
-            startActivity(setting);
+            Intent gotoSettings=new Intent(HomeActivity.this,SettingActivity.class);
+            startActivity(gotoSettings);
+            return true;
         }
         if (id ==R.id.action_Feedback){
             Intent gotoFeedback = new Intent(HomeActivity.this, FeedbackActivity.class);
@@ -107,8 +108,6 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_Downloads) {
 
         } else if (id == R.id.nav_History) {
-
-        }   else if (id == R.id.nav_Setting) {
 
         } else if (id == R.id.nav_share) {
 

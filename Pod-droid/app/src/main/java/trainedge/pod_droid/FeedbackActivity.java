@@ -31,7 +31,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         ImageButton rateobj3 = (ImageButton) findViewById(R.id.rate3);
         ImageButton rateobj4 = (ImageButton) findViewById(R.id.rate4);
         ImageButton rateobj5 = (ImageButton) findViewById(R.id.rate5);
-        FloatingActionButton subm = (FloatingActionButton) findViewById(R.id.submit);
+        FloatingActionButton subm = (FloatingActionButton) findViewById(R.id.fab);
         usermess = (EditText) findViewById(R.id.user_mess);
         uremail = (EditText) findViewById(R.id.user_email);
 
@@ -68,7 +68,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "Loved it", Toast.LENGTH_SHORT).show();
         }
         if(v.getId() == R.id.submit){
-            submitf();
+            submit();
         }
     }
     @Override
@@ -85,7 +85,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void afterTextChanged(Editable s) {}
 
-    private void submitf(){
+    private void submit(){
         String str1 = usermess.getText().toString();
         String str2 = uremail.getText().toString();
         if(rating == 0){
