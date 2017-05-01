@@ -2,24 +2,26 @@ package trainedge.pod_droid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.appinvite.AppInviteInvitation;
+
+import de.cketti.shareintentbuilder.ShareIntentBuilder;
 import trainedge.pod_droid.adapters.CategoryAdapter;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int REQUEST_INVITE = 231;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        RecyclerView rvCategories= (RecyclerView) findViewById(R.id.rvCategories);
+        RecyclerView rvCategories = (RecyclerView) findViewById(R.id.rvCategories);
         rvCategories.setLayoutManager(new LinearLayoutManager(this));
         rvCategories.setAdapter(new CategoryAdapter(this));
 
@@ -70,29 +72,28 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_Settings) {
-
-            Intent gotoSettings=new Intent(HomeActivity.this,SettingActivity.class);
+            Intent gotoSettings = new Intent(HomeActivity.this, SettingActivity.class);
             startActivity(gotoSettings);
             return true;
         }
-        if (id ==R.id.action_Feedback){
+        if (id == R.id.action_Feedback) {
             Intent gotoFeedback = new Intent(HomeActivity.this, FeedbackActivity.class);
             startActivity(gotoFeedback);
             return true;
-
         }
-        if (id ==R.id.action_About) {
+        if (id == R.id.action_About) {
             Intent gotoAbout = new Intent(HomeActivity.this, AboutActivity.class);
             startActivity(gotoAbout);
             return true;
         }
-        if (id ==R.id.action_Logout) {
+        if (id == R.id.action_Logout) {
             Intent gotoLogout = new Intent(HomeActivity.this, LogoutActivity.class);
             startActivity(gotoLogout);
             return true;
         }
 
-            return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -110,13 +111,25 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_History) {
 
         } else if (id == R.id.nav_share) {
-
+            ShareIntentBuilder.from(this)
+                    .text("Sharing is caring!")
+                    .subject("Download Pod driod from playstore")
+                    .share();
+            return true;
         } else if (id == R.id.nav_send) {
-
+            sendInvitation();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void sendInvitation() {
+        Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
+                .setMessage(getString(R.string.invitation_message))
+                .setCallToActionText(getString(R.string.invitation_cta))
+                .build();
+        startActivityForResult(intent, REQUEST_INVITE);
     }
 }

@@ -8,11 +8,4 @@
     tools:context="trainedge.pod_droid.ShareActivity"
     tools:showIn="@layout/activity_share">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="app invite and sharing"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="48dp" />
 </android.support.constraint.ConstraintLayout>

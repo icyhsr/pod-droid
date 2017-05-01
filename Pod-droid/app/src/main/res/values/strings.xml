@@ -65,4 +65,11 @@
     <string name="home_no_internet">No internet connection</string>
     <string name="home_request_error">Request could not be completed due to Some reason</string>
     <string name="detail_error_playing">This podcast language cannot be played</string>
+    <string name="title_activity_firebase_database_demo">FirebaseDatabaseDemo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="invitation_title">Connect Now</string>
+    <string name="invitation_message">Install our app to get amazing life</string>
+    <string name="invitation_cta">Install App</string>
 </resources>
