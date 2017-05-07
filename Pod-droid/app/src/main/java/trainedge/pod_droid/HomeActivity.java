@@ -91,7 +91,6 @@ public class HomeActivity extends AppCompatActivity
             startActivity(gotoLogout);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
 
     }
