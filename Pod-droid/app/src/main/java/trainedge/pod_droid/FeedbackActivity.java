@@ -32,6 +32,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         ImageButton rateobj4 = (ImageButton) findViewById(R.id.rate4);
         ImageButton rateobj5 = (ImageButton) findViewById(R.id.rate5);
         FloatingActionButton subm = (FloatingActionButton) findViewById(R.id.fab);
+        subm.setVisibility(View.GONE);
         usermess = (EditText) findViewById(R.id.user_mess);
         uremail = (EditText) findViewById(R.id.user_email);
 

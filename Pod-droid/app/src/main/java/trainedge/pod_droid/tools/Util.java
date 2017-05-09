@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class Util {
 
-    public static final String appName = "Pod Droid";
+    public static final String appName = "PodDroid";
 
     //****************************************************************************************//
     //									  Log												  //

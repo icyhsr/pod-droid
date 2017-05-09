@@ -19,8 +19,8 @@
     <string name="detail_bt_stop">Stop</string>
     <string name="row_duration">Duration: </string>
 
-    <string name="home_exit_dialog_message">Deseas salir?</string>
-    <string name="home_exit_ok">Si</string>
+    <string name="home_exit_dialog_message">Exit this podcast?</string>
+    <string name="home_exit_ok">Yes</string>
     <string name="home_exit_cancel">No</string>
 
 

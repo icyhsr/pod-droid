@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.octo.android.robospice.SpiceManager;
@@ -32,7 +33,7 @@ import trainedge.pod_droid.tools.Util;
 import static trainedge.pod_droid.adapters.CategoryAdapter.CAT_NAME;
 import static trainedge.pod_droid.adapters.CategoryAdapter.CAT_POS;
 
-@EActivity(R.layout.activity_home)
+@EActivity(R.layout.activity_podcast_preview)
 public class PodcastViewerActivity extends AppCompatActivity implements NetworkActions, TempFragmentListener {
 
     /**********************************************************************************************
@@ -67,6 +68,9 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
 
     @ViewById
     View loader;
+
+    //    @ViewById
+    //  Toolbar toolbar;
     private String category_name;
     private String url;
     private SharedPreferences pod_pref;
@@ -105,18 +109,6 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
     }
 
 
-    /**********************************************************************************************
-     *
-     *                                      Public methods
-     *
-     **********************************************************************************************/
-
-
-    /**********************************************************************************************
-     *
-     *                                      Private methods
-     *
-     **********************************************************************************************/
     private void initLogicalComponents() {
 
         mManager = new MyCustomFragmaneManager(getFragmentManager());
@@ -260,7 +252,8 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
                 }
 
             } else {
-                manager.beginTransaction().add(R.id.container, _fragment, fragmentTag).commit();
+                manager.beginTransaction().replace(R.id.container, _fragment, fragmentTag).commit();
+                manager.executePendingTransactions();
             }
             index++;
             iFragmentCounter++;
@@ -325,7 +318,6 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
                     }
                 }
 
-                //Removiendo los fragmentos temporales
                 for (String tag : tags) {
                     if (!tag.contains(Constants.TAG_PREFIX_CONST)) {
                         Util.li("App" + "Fragment " + tag + " eliminado.");
@@ -380,12 +372,14 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
     }
 
     private void setupPodcast() {
+        //setSupportActionBar(toolbar);
         if (getIntent() != null) {
             Intent intent = getIntent();
             category_name = getIntent().getStringExtra(CAT_NAME);
             int pos = getIntent().getIntExtra(CAT_POS, 0);
+
             url = getResources().getStringArray(R.array.podcast)[pos];
-            getSupportActionBar().setSubtitle(category_name);
+            //getSupportActionBar().setSubtitle(category_name);
             pod_pref = getSharedPreferences("pod_pref", Context.MODE_PRIVATE);
             pod_pref.edit().putString("selected_url", url).apply();
 

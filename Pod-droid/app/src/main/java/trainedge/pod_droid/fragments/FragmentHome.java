@@ -5,26 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import trainedge.pod_droid.Model.Podcast;
-import trainedge.pod_droid.Model.Songs;
-import trainedge.pod_droid.R;
-import trainedge.pod_droid.adapters.ChaptersAdapter;
-
-import trainedge.pod_droid.restclient.request.RssFeedRequest;
-import trainedge.pod_droid.tools.Constants;
-
-import trainedge.pod_droid.tools.Interfaces.OnPlayButtonListener;
-import trainedge.pod_droid.tools.Util;
 
 import com.google.gson.Gson;
 import com.octo.android.robospice.persistence.exception.SpiceException;
@@ -45,8 +30,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
-@EFragment
+import trainedge.pod_droid.Model.Podcast;
+import trainedge.pod_droid.Model.Songs;
+import trainedge.pod_droid.R;
+import trainedge.pod_droid.adapters.ChaptersAdapter;
+import trainedge.pod_droid.restclient.request.RssFeedRequest;
+import trainedge.pod_droid.tools.Constants;
+import trainedge.pod_droid.tools.Interfaces.OnPlayButtonListener;
+import trainedge.pod_droid.tools.Util;
+
+@EFragment(R.layout.fragment_home)
 public class FragmentHome extends BaseFragment implements RequestListener<byte[]>, OnPlayButtonListener {
+
+
+    /**********************************************************************************************
+     *
+     *                                      Simple variables
+     *
+     **********************************************************************************************/
 
     ChaptersAdapter chaptersAdapter;
     Podcast parsedPodcast;
@@ -64,7 +65,21 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     String requestError;
 
 
+    /**********************************************************************************************
+     *
+     *                                      Special variables
+     *
+     **********************************************************************************************/
+
+
     MediaPlayer player;
+
+
+    /**********************************************************************************************
+     *
+     *                                          UI Variables
+     *
+     **********************************************************************************************/
 
     @ViewById
     ListView lvChapters;
@@ -80,20 +95,17 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     private String selected_url;
 
 
+    /**********************************************************************************************
+     *
+     *                                      Fragment's lifecycle
+     *
+     **********************************************************************************************/
     @Override
-    public void onAttach(Context activity) {
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
-        pod_pref = activity.getSharedPreferences("pod_pref", Context.MODE_PRIVATE);
-        selected_url = pod_pref.getString("selected_url", "https://kindafamouspod.podbean.com/feed/");
+
     }
 
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        return view;
-    }
 
     @AfterViews
     void init() {
@@ -132,7 +144,7 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     @Click(R.id.btLoadPodcast)
     void loadPodcast() {
         hideKb();
-        urlPodcast = etUrl.getText().toString();
+        urlPodcast = selected_url;
         if (Util.isValidURL(urlPodcast)) {
             if (Util.isOnline(getActivity()))
                 executePodcastRequest();
@@ -150,10 +162,23 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         killMediaPlayer();
 
     }
+    /**********************************************************************************************
+     *
+     *                                      Public methods
+     *
+     **********************************************************************************************/
+
+
+    /**********************************************************************************************
+     *
+     *                                      Private methods
+     *
+     **********************************************************************************************/
 
     private void initLogicalComponenets() {
-        etUrl.setText(selected_url);
-        etUrl.setEnabled(false);
+        pod_pref = getActivity().getSharedPreferences("pod_pref", Context.MODE_PRIVATE);
+        selected_url = pod_pref.getString("selected_url", "https://kindafamouspod.podbean.com/feed/");
+
         player = new MediaPlayer();
     }
 
@@ -177,7 +202,7 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
             public boolean onError(MediaPlayer mediaPlayer, int i, int i2) {
                 showLoading(false);
                 lvChapters.setEnabled(true);
-                toast("Algo salió mal con la reproducción de la url");
+                toast("loading");
                 return false;
             }
         });
@@ -282,6 +307,12 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         }
         return isAudio;
     }
+
+    /**********************************************************************************************
+     *
+     *                                     Listeners
+     *
+     **********************************************************************************************/
 
     @Override
     public void onRequestFailure(SpiceException spiceException) {

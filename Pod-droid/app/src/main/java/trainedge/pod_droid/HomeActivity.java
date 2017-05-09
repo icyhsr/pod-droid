@@ -92,7 +92,6 @@ public class HomeActivity extends AppCompatActivity
             return true;
         }
         return super.onOptionsItemSelected(item);
-
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -106,6 +105,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_Discover) {
 
         } else if (id == R.id.nav_Downloads) {
+
 
         } else if (id == R.id.nav_History) {
 
