@@ -2,19 +2,23 @@ package trainedge.pod_droid.Model;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-/**
- * Created by angel on 6/6/15.
- */
+import java.util.List;
+
+
 @Root(name="rss",strict = false)
 @Namespace(reference = "http://www.itunes.com/dtds/podcast-1.0.dtd",prefix = "itunes")
+@ElementList(entry = "link", inline = true, required = false)
 public class Podcast {
     @Attribute
     private String version;
+
     @Element(name = "channel")
     private Channel channel;
+
 
     public String getVersion() {
         return version;

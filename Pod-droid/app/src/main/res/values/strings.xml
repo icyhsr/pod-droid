@@ -25,7 +25,6 @@
 
 
     <string-array name="common_name">
-        <item>Kinda Famous</item>
         <item>The Onion</item>
         <item>Build The Church</item>
         <item>Ted Radio Hour</item>
@@ -36,21 +35,22 @@
         <item>English Bulletins</item>
         <item>Hindi Bulletins</item>
         <item>AIB</item>
+        <item>Kinda Famous</item>
     </string-array>
     <string-array name="podcast">
-        <item>https://kindafamouspod.podbean.com/feed/</item>
         <item>http://www.theonion.com/feeds/rss?feature_type=radio-news</item>
         <item>http://feeds.feedburner.com/BuildTheChurch</item>
         <item>https://www.npr.org/rss/podcast.php</item>
-        <item>www.bbc.co.uk/programmes/p02nrxgq/episodes/downloads.rss</item>
-        <item>www.cba.ca/podcasting/include/spark.xml</item>
-        <item>www.wired.co.uk/rss/podcast/</item>
-        <item>www.bbc.co.uk/podcasts/radio/newspod/rss.xml</item>
-        <item>www.newsonair.nic.in/Eng.asp</item>
-        <item>www.newsonair.nic.in/Hindi.asp</item>
-        <item>feeds.feedburner.com/Allindiabakchod</item>
+        <item>http://www.bbc.co.uk/programmes/p02nrxgq/episodes/downloads.rss</item>
+        <item>http://www.cba.ca/podcasting/include/spark.xml</item>
+        <item>http://www.wired.co.uk/rss/podcast/</item>
+        <item>http://www.bbc.co.uk/podcasts/radio/newspod/rss.xml</item>
+        <item>http://www.newsonair.nic.in/Eng.asp</item>
+        <item>http://www.newsonair.nic.in/Hindi.asp</item>
+        <item>http://feeds.feedburner.com/Allindiabakchod</item>
+        <item>http://kindafamouspod.podbean.com/feed/</item>
     </string-array>
-    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_splash">Pod-Droid</string>
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_basic">basic</string>
     <string name="title_activity_podcast_viewer">Podcast Viewer</string>
@@ -72,4 +72,5 @@
     <string name="invitation_title">Connect Now</string>
     <string name="invitation_message">Install our app to get amazing life</string>
     <string name="invitation_cta">Install App</string>
+    <string name="title_activity_podcast">Podcast</string>
 </resources>

@@ -75,6 +75,15 @@
             android:name=".PrivacyActivity"
             android:label="@string/title_activity_privacy"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PodcastActivity"
+            android:label="@string/title_activity_podcast"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="trainedge.pod_droid.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

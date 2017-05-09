@@ -43,12 +43,6 @@ import trainedge.pod_droid.tools.Util;
 public class FragmentHome extends BaseFragment implements RequestListener<byte[]>, OnPlayButtonListener {
 
 
-    /**********************************************************************************************
-     *
-     *                                      Simple variables
-     *
-     **********************************************************************************************/
-
     ChaptersAdapter chaptersAdapter;
     Podcast parsedPodcast;
     String urlPodcast = "";
@@ -67,22 +61,14 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
 
     /**********************************************************************************************
      *
-     *                                      Special variables
-     *
-     **********************************************************************************************/
-
-
-    MediaPlayer player;
-
-
-    /**********************************************************************************************
-     *
      *                                          UI Variables
      *
      **********************************************************************************************/
 
     @ViewById
     ListView lvChapters;
+
+
     @ViewById
     TextView tvTitle;
     @ViewById
@@ -91,6 +77,14 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
     Button btLoadPodcast;
     @ViewById
     ImageView ivPodcastLogo;
+    /**********************************************************************************************
+     *
+     *                                      Special variables
+     *
+     **********************************************************************************************/
+
+
+    MediaPlayer player;
     private SharedPreferences pod_pref;
     private String selected_url;
 
@@ -135,8 +129,6 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
             Bundle args = new Bundle();
             args.putString(Constants.KEY_SONG, new Gson().toJson(song));
             insertTemporal(Constants.TAG_FRAG_DETAIL, args);
-
-
         }
 
     }
@@ -162,23 +154,10 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         killMediaPlayer();
 
     }
-    /**********************************************************************************************
-     *
-     *                                      Public methods
-     *
-     **********************************************************************************************/
-
-
-    /**********************************************************************************************
-     *
-     *                                      Private methods
-     *
-     **********************************************************************************************/
 
     private void initLogicalComponenets() {
         pod_pref = getActivity().getSharedPreferences("pod_pref", Context.MODE_PRIVATE);
         selected_url = pod_pref.getString("selected_url", "https://kindafamouspod.podbean.com/feed/");
-
         player = new MediaPlayer();
     }
 
@@ -186,8 +165,6 @@ public class FragmentHome extends BaseFragment implements RequestListener<byte[]
         showLoading(true);
         RssFeedRequest request = new RssFeedRequest(urlPodcast);
         spiceManager.execute(request, this);
-
-
     }
 
     private void assignListeners() {

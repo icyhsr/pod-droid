@@ -4,13 +4,13 @@ import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.octo.android.robospice.SpiceManager;
@@ -184,13 +184,13 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
         private ArrayList<String> tags;
         private int index;
         private FragmentManager manager;
-        private int iFragmentCounter;
+        private int counter;
 
         public MyCustomFragmaneManager(FragmentManager fragmentManager) {
             manager = fragmentManager;
             tags = new ArrayList<String>();
             index = 0;
-            iFragmentCounter = 0;
+            counter = 0;
         }
 
         public boolean hasFragment(String tag) {
@@ -218,13 +218,13 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
             manager.beginTransaction().show(constantFragment).commit();
         }
 
-        public void insert(Fragment _fragment, String _prefix) {
+        public void insert(Fragment fragment, String prefix) {
             String fragmentTag = "";
 
-            if (_prefix.contains(Constants.TAG_PREFIX_CONST)) {
-                fragmentTag = _prefix;
+            if (prefix.contains(Constants.TAG_PREFIX_CONST)) {
+                fragmentTag = prefix;
             } else {
-                fragmentTag = _prefix + "_" + iFragmentCounter;
+                fragmentTag = prefix + "_" + counter;
             }
 
             Util.li("New fragment tag" + fragmentTag);
@@ -237,7 +237,7 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
             if (tags.size() > 1) {
                 Fragment lastFragment = manager.findFragmentByTag(tags.get(index - 1));
                 if (tags.size() < 60) {
-                    manager.beginTransaction().add(R.id.container, _fragment, fragmentTag).commit();
+                    manager.beginTransaction().add(R.id.container, fragment, fragmentTag).commit();
                 } else {
                     Fragment firstFragment = manager.findFragmentByTag(tags.get(0));
                     if (firstFragment.getTag().contains(Constants.TAG_PREFIX_CONST)) {
@@ -246,17 +246,17 @@ public class PodcastViewerActivity extends AppCompatActivity implements NetworkA
                         manager.beginTransaction().remove(firstFragment).commit();
                     }
                     tags.remove(0);
-                    manager.beginTransaction().add(R.id.container, _fragment, fragmentTag).commit();
+                    manager.beginTransaction().add(R.id.container, fragment, fragmentTag).commit();
 
                     index--;
                 }
 
             } else {
-                manager.beginTransaction().replace(R.id.container, _fragment, fragmentTag).commit();
-                manager.executePendingTransactions();
+                FragmentTransaction replace = manager.beginTransaction().replace(R.id.container, fragment, fragmentTag);
+                replace.commitAllowingStateLoss();
             }
             index++;
-            iFragmentCounter++;
+            counter++;
         }
 
         public Fragment getLastFragment() {

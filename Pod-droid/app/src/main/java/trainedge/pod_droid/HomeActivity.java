@@ -43,7 +43,6 @@ public class HomeActivity extends AppCompatActivity
         RecyclerView rvCategories = (RecyclerView) findViewById(R.id.rvCategories);
         rvCategories.setLayoutManager(new LinearLayoutManager(this));
         rvCategories.setAdapter(new CategoryAdapter(this));
-
     }
 
     @Override
