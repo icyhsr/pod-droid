@@ -1,2 +1,2 @@
 # pod-droid
-mera project aur main
+App to fetch podcast from the Radio.
